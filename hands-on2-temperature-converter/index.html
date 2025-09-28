@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hands-On 2</title>
+</head>
+<body>
+  <h2>Celsius to Fahrenheit Converter</h2>
+  <input type="number" placeholder="Enter Celsius" id="celsius">
+  <button onclick="convertTemp()">Compute</button>
+  <p id="fahrenheit"></p>
+</body>
+
+<script>
+  function convertTemp(){
+    let celsius = document.getElementById("celsius").value;
+    let fahrenheit = (celsius * 9/5) + 32;
+    
+    //to display answer in html and console
+    document.getElementById("fahrenheit").textContent = celsius + " Celsius is " + fahrenheit + " Fahrenheit";
+    console.log(celsius + " Celsius is " + fahrenheit + " Fahrenheit");
+  }
+</script>
+
+</html>
