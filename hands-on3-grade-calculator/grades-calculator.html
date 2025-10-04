@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Calculator</title>
+  </head>
+  <body>
+    <h1>Grade Calculator</h1>
+    <script>
+      function computeGrade(project, quiz, midterm, finals, activities) {
+        let average = (project + quiz + midterm + finals + activities) / 5;
+        console.log("Average: ", average);
+
+        if (average >= 12.5) {
+          console.log("Remarks: Passed");
+        } else {
+          console.log("Remarks: Failed");
+        }
+      }
+      computeGrade(25, 15, 25, 25, 10);
+    </script>
+  </body>
+</html>
