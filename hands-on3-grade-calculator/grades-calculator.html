@@ -9,16 +9,17 @@
     <h1>Grade Calculator</h1>
     <script>
       function computeGrade(project, quiz, midterm, finals, activities) {
-        let average = (project + quiz + midterm + finals + activities) / 5;
-        console.log("Average: ", average);
+        let average =
+          ((project + quiz + midterm + finals + activities) / 100) * 100;
+        console.log("Average: ", average, "%");
 
-        if (average >= 12.5) {
+        if (average >= 75) {
           console.log("Remarks: Passed");
         } else {
           console.log("Remarks: Failed");
         }
       }
-      computeGrade(25, 15, 25, 25, 10);
+      computeGrade(20, 10, 20, 25, 10);
     </script>
   </body>
 </html>
