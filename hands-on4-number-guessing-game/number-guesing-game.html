@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+  </head>
+  <body>
+    <h1>Number Guessing Game</h1>
+    <input type="number" id="guessInput" placeholder="Guess a number" />
+    <button class="btn">Enter</button>
+    <p id="result">Entered Number:</p>
+    <p id="location">Data located at:</p>
+
+    <script>
+      let data = [
+        1,
+        10,
+        5,
+        [2, 3, 50],
+        6,
+        7,
+        8,
+        9,
+        11,
+        100,
+        55,
+        30,
+        [11, 12, 13, 14, 15, 16],
+        17,
+        18,
+        19,
+        20,
+        21,
+        33,
+        85,
+      ];
+
+      document.querySelector(".btn").addEventListener("click", function () {
+        let input = parseInt(document.getElementById("guessInput").value);
+        let found = false;
+        let locationText = "";
+
+        document.getElementById(
+          "result"
+        ).textContent = `Entered Number: ${input}`;
+
+        data.forEach((item, index) => {
+          if (Array.isArray(item)) {
+            let subIndex = item.indexOf(input);
+            if (subIndex !== -1) {
+              found = true;
+              locationText = `Data located at: index ${index}, sub-index ${subIndex}`;
+            }
+          } else {
+            if (item === input) {
+              found = true;
+              locationText = `Data located at: index ${index}`;
+            }
+          }
+        });
+
+        if (!found) {
+          locationText = `Data is not on your array.`;
+        }
+
+        document.getElementById("location").textContent = locationText;
+      });
+    </script>
+  </body>
+</html>
